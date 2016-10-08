@@ -1,13 +1,15 @@
 {
-  "name": "Defaut Build",
+  "name": "beaker",
   "version": "1.0.0",
-  "description": "Default build",
+  "description": "beaker",
   "dependencies": {},
   "devDependencies": {
     "clean-css": "^3.4.19",
     "http-server": "^0.9.0",
     "jshint": "^2.9.3",
     "mocha": "^3.0.2",
+    "node-sass": "^3.10.0",
+    "nodemon": "^1.10.2",
     "uglify-js": "^2.7.3",
     "watch": "^0.19.2"
   },
@@ -17,10 +19,13 @@
     "test": "echo '=> testing' && mocha test/*.js",
     "minify:js": "echo '=> minify:js' && uglifyjs js/test.js -o dist/public/js/main.min.js",
     "minify:css": "echo '=> minify:css' && cleancss css/style.css -o dist/public/css/main.min.css",
-    "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s",
+    "html":   "cp index.html dist/public/",
+    "assets": "cp -R images/ dist/public/images/",
+    "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s && npm run html && npm run assets",
+    "build:sass": "node-sass sass/style.scss css/main.min.css",
+    "watch:sass": "npm run build:sass -- -w",
     "pretest": "npm run lint -s",
-    "watch": "watch 'npm run minify:js && npm run minify:css' js/ css/",
-    "server": "http-server dist/public/"
+    "start": "http-server"
   },
   "author": "Experiment",
   "license": "Open"
