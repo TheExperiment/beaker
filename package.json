@@ -18,14 +18,14 @@
     "lint": "echo '=> linting' && jshint test/*.js",
     "test": "echo '=> testing' && mocha test/*.js",
     "minify:js": "echo '=> minify:js' && uglifyjs js/test.js -o dist/public/js/main.min.js",
-    "minify:css": "echo '=> minify:css' && cleancss css/style.css -o dist/public/css/main.min.css",
+    "minify:css": "echo '=> minify:css' && cleancss css/main.min.css -o dist/public/css/main.min.css",
     "html":   "cp index.html dist/public/",
     "assets": "cp -R images/ dist/public/images/",
-    "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s && npm run html && npm run assets",
+    "build": "echo '=> building' && npm run minify:js -s && npm run minify:css -s && npm run html && npm run assets",
     "build:sass": "node-sass sass/style.scss css/main.min.css",
     "watch:sass": "npm run build:sass -- -w",
     "pretest": "npm run lint -s",
-    "start": "http-server"
+    "start": "http-server dist/public/"
   },
   "author": "Experiment",
   "license": "Open"

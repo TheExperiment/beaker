@@ -133,31 +133,17 @@ img {
 /* ===== Primary Styles ========================================================
    Author: Nick Jones / The Experiment
    ========================================================================== */
-.background {
-  background-image: "/img/Mideau_2.jpg";
-  position: fixed;
-  width: 100%;
-  height: 100%; }
-  .background img {
-    /* Set rules to fill background */
-    min-height: 100%;
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: auto; }
+.container {
+  position: absolute;
+  width: 95%;
+  top: 0; }
 
-.logo {
-  position: fixed;
+.hero-image {
+  position: relative;
   z-index: 10;
   top: 0;
-  right: 0;
-  margin: 3%;
-  opacity: .5;
-  cursor: pointer;
+  width: 100%;
+  margin: 2em;
   -webkit-transition: all 0.4s 0.1s ease-out;
   -moz-transition: all 0.4s 0.1s ease-out;
   -o-transition: all 0.4s 0.1s ease-out;
@@ -166,20 +152,20 @@ img {
   -moz-transition-duration: 0.4s;
   -moz-transition-property: all;
   -moz-transition-delay: 0.1s; }
-  .logo.active {
+  .hero-image.active {
     opacity: 1; }
-  .logo:hover {
+  .hero-image:hover {
     opacity: 1; }
-  .logo img {
-    width: 140px;
+  .hero-image img {
+    height: 40em;
     display: block;
     margin-left: auto;
     margin-right: auto; }
   @media (max-width: 1000px) {
-    .logo {
+    .hero-image {
       position: relative;
       padding: 10%; }
-      .logo img {
+      .hero-image img {
         max-height: 80px;
         width: auto; } }
 
@@ -232,9 +218,6 @@ img {
       .nav-list a {
         font-size: .7em;
         line-height: 4em; } }
-
-.passed {
-  left: -100%; }
 
 header {
   width: 100%;
